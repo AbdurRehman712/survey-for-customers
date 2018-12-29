@@ -19,4 +19,4 @@ collections:
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Category", name: "category", widget: "text"}
       - {label: "Author", name: "author", widget: "text"}
-      - {label: "Cover", name: "cover", widget: "string"}
+      - {label: "Cover", name: "cover", widget: "image"}
