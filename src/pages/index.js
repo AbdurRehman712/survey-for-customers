@@ -75,7 +75,7 @@ export default IndexPage;
 export const query = graphql`
   query IndexQuery {
     posts: allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "//posts/" } }
+      filter: { fileAbsolutePath: { regex: "/posts/" } }
       sort: { fields: [fields___prefix], order: DESC }
     ) {
       edges {
