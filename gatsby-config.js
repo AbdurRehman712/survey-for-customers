@@ -50,6 +50,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-styled-jsx`, // the plugin's code is inserted directly to gatsby-node.js and gatsby-ssr.js files
     `gatsby-plugin-styled-jsx-postcss`, // as above
+    `gatsby-plugin-netlify-cms-paths`,
     {
       resolve: `gatsby-plugin-layout`,
       options: {
@@ -64,6 +65,13 @@ module.exports = {
         indexName: process.env.ALGOLIA_INDEX_NAME ? process.env.ALGOLIA_INDEX_NAME : "",
         queries,
         chunkSize: 10000 // default: 1000
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `img`,
+        path: `${__dirname}/content/posts/img/`
       }
     },
     {
@@ -110,6 +118,12 @@ module.exports = {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {
               wrapperStyle: `margin-bottom: 2em`
+            }
+          },
+          {
+            resolve: `gatsby-plugin-netlify-cms-paths`,
+            options: {
+              cmsConfig: `/static/admin/config.yml`
             }
           },
           `gatsby-remark-prismjs`,
