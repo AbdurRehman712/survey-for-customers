@@ -69,13 +69,6 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `img`,
-        path: `${__dirname}/content/posts/img/`
-      }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
         path: `${__dirname}/content/posts/`,
         name: "posts"
       }
@@ -267,6 +260,7 @@ module.exports = {
       options: {
         include: /svg-icons/
       }
-    }
+    },
+    "gatsby-plugin-netlify", 
   ]
 };
